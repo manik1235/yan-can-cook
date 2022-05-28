@@ -1,0 +1,13 @@
+<div>
+  <div>
+    <p>Add Ingredients</p>
+    <%= form_with model: @ingredient do |f| %>
+      <%= f.text_field :name %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+  <div>
+    <p>Ingredients</p>
+    <%= select_tag 'ingredients', options_from_collection_for_select(@ingredients, 'id', 'name'), multiple: true, class: 'ingredients-container' %>
+</div>
