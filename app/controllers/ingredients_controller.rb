@@ -1,6 +1,6 @@
 class IngredientsController < ApplicationController
   def create
-    @ingredient = Ingredient.new(params_for(:ingredients))
+    @ingredient = Ingredient.new(params_for(:ingredient))
 
     @ingredient.save
 
