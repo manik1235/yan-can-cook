@@ -9,5 +9,9 @@
 
   <div>
     <p>Ingredients</p>
-    <%= select_tag 'ingredients', options_from_collection_for_select(@ingredients, 'id', 'name'), multiple: true, class: 'ingredients-container' %>
+    <%= form_with model: @recipe do |f| %>
+      <%= select_tag 'ingredients', options_from_collection_for_select(@ingredients, 'id', 'name'), multiple: true, class: 'ingredients-container' %>
+      <%= f.text_field :name %>
+      <%= f.submit %>
+    <% end %>
 </div>

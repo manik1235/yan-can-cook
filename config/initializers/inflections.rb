@@ -14,3 +14,8 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+#
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.plural /^(recipe)$/i, '\1s'
+  inflect.singular /^(recipe)s/i, '\1'
+end

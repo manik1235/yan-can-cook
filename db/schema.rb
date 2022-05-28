@@ -26,14 +26,14 @@ ActiveRecord::Schema.define(version: 2022_05_28_204533) do
     t.index ["unit_id"], name: "index_ingredients_lists_on_unit_id"
   end
 
-  create_table "ingredients_recipies", id: false, force: :cascade do |t|
+  create_table "ingredients_recipes", id: false, force: :cascade do |t|
     t.integer "ingredient_id", null: false
-    t.integer "recipy_id", null: false
+    t.integer "recipe_id", null: false
     t.float "amount"
     t.integer "unit_id"
-    t.index "\"ingredients\", \"recipies\"", name: "index_ingredients_recipies_on_ingredients_and_recipies"
-    t.index "\"recipies\", \"ingredients\"", name: "index_ingredients_recipies_on_recipies_and_ingredients"
-    t.index ["unit_id"], name: "index_ingredients_recipies_on_unit_id"
+    t.index "\"ingredients\", \"recipes\"", name: "index_ingredients_recipes_on_ingredients_and_recipes"
+    t.index "\"recipes\", \"ingredients\"", name: "index_ingredients_recipes_on_recipes_and_ingredients"
+    t.index ["unit_id"], name: "index_ingredients_recipes_on_unit_id"
   end
 
   create_table "ingredients_restrictions", id: false, force: :cascade do |t|
@@ -67,11 +67,11 @@ ActiveRecord::Schema.define(version: 2022_05_28_204533) do
     t.index "\"plans\", \"meals\"", name: "index_meals_plans_on_plans_and_meals"
   end
 
-  create_table "meals_recipies", id: false, force: :cascade do |t|
-    t.integer "recipy_id", null: false
+  create_table "meals_recipes", id: false, force: :cascade do |t|
+    t.integer "recipe_id", null: false
     t.integer "meal_id", null: false
-    t.index "\"meals\", \"recipies\"", name: "index_meals_recipies_on_meals_and_recipies"
-    t.index "\"recipies\", \"meals\"", name: "index_meals_recipies_on_recipies_and_meals"
+    t.index "\"meals\", \"recipes\"", name: "index_meals_recipes_on_meals_and_recipes"
+    t.index "\"recipes\", \"meals\"", name: "index_meals_recipes_on_recipes_and_meals"
   end
 
   create_table "plans", force: :cascade do |t|
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2022_05_28_204533) do
     t.index "\"users\", \"plans\"", name: "index_plans_users_on_users_and_plans"
   end
 
-  create_table "recipies", force: :cascade do |t|
+  create_table "recipes", force: :cascade do |t|
     t.string "name"
   end
 

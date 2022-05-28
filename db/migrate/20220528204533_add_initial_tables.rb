@@ -4,9 +4,9 @@ class AddInitialTables < ActiveRecord::Migration[6.1]
       t.string :name
     end
 
-    create_join_table :ingredients, :recipies do |t|
-      t.index [:ingredients, :recipies]
-      t.index [:recipies, :ingredients]
+    create_join_table :ingredients, :recipes do |t|
+      t.index [:ingredients, :recipes]
+      t.index [:recipes, :ingredients]
 
       t.float :amount
       t.references :unit
@@ -32,13 +32,13 @@ class AddInitialTables < ActiveRecord::Migration[6.1]
       t.references :unit
     end
 
-    create_table :recipies do |t|
+    create_table :recipes do |t|
       t.string :name
     end
 
-    create_join_table :recipies, :meals do |t|
-      t.index [:recipies, :meals]
-      t.index [:meals, :recipies]
+    create_join_table :recipes, :meals do |t|
+      t.index [:recipes, :meals]
+      t.index [:meals, :recipes]
     end
 
     create_table :plans do |t|
