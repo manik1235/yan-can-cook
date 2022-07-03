@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_28_204533) do
+ActiveRecord::Schema.define(version: 2022_07_03_235429) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
+    t.integer "calorie_count"
   end
 
   create_table "ingredients_lists", id: false, force: :cascade do |t|

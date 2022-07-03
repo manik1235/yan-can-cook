@@ -2,7 +2,14 @@
   <div>
     <p>Add Ingredients</p>
     <%= form_with model: @ingredient do |f| %>
-      <%= f.text_field :name %>
+      <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <div>
+        <%= f.label :calorie_count %>
+        <%= f.text_field :calorie_count %>
+      </div>
       <%= f.submit %>
     <% end %>
   </div>

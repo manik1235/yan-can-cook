@@ -5,5 +5,7 @@ class PlansController < ApplicationController
 
     @recipes = Recipe.all
     @recipe = Recipe.new
+
+    @ingredients_recipes = @recipe.ingredients
   end
 end

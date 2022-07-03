@@ -1,4 +1,5 @@
 <div>
   <p>Look! Recipes</p>
   <%= select_tag 'recipes', options_from_collection_for_select(@recipes, 'id', 'name'), multiple: true, class: 'recipes-container js-recipes-container' %>
+  <%= select_tag 'ingredents_recipes', options_from_collection_for_select(@ingredients_recipes, 'id', 'name'), multiple: true, class: 'ingredients-recipes-container js-ingredients-recipes-container' %>
 </div>
